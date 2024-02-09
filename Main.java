@@ -17,7 +17,11 @@ public class Main {
             opcion = Leer.leerEntero("Introduce una opción: ");
             switch(opcion){
                 case 1:
-
+                    dimension = Leer.leerEntero("¿Cuánto quieres que mida el lado del mar?: ");
+                    tablero = new String [dimension][dimension];
+                    System.out.println("Tu tablero será este:");
+                    Funciones.imprimirTablero(tablero);
+                    System.out.println("--------------");
             }
         }while(opcion !=0);
     }
