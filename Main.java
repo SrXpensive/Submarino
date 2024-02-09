@@ -2,7 +2,9 @@
 public class Main {
     public static void main(String[] args) {
         String [][] tablero;
+        int dimension;
         int opcion = 0;
+
         System.out.println("LA CAZA DEL SUBMARINO\n");
         System.out.println();
         do{
@@ -12,7 +14,11 @@ public class Main {
             System.out.println("2. Ayuda");
             System.out.println("0. Salir");
             System.out.println("--------------");
-            opcion = leer.Leer.leerEntero("Introduce una opción: ");
+            opcion = Leer.leerEntero("Introduce una opción: ");
+            switch(opcion){
+                case 1:
+
+            }
         }while(opcion !=0);
     }
 }
