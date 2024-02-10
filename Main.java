@@ -6,7 +6,6 @@ public class Main {
         int intentos;
         int coordX;
         int coordY;
-        int [] posicion;
 
         System.out.println("LA CAZA DEL SUBMARINO\n");
         System.out.println();
@@ -36,13 +35,12 @@ public class Main {
                         coordX = Leer.leerEntero("Introduce la coordenada X (fila): ");
                         System.out.println("--------------");
                         coordY = Leer.leerEntero("Introduce la coordenada Y (columna): ");
-                        posicion= new int[]{coordX,coordY};
                         System.out.println("--------------");
-                        if(Funciones.leerSonar(dimension,coordX,coordY)){
+                        if(Funciones.leerSonar(tablero,dimension,coordX,coordY)){
                             System.out.println("GANASTE LA PARTIDA");
                             System.out.println("--------------");
                             break;
-                        };
+                        }
                     }
             }
         }while(opcion !=0);
