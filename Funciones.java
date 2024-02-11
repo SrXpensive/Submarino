@@ -1,7 +1,16 @@
-import java.sql.SQLOutput;
 import java.util.Arrays;
 
+/**
+ * Funciones del proyecto Submarino
+ * @author Eduardo Caro
+ * @version 1.0
+ */
 public class Funciones {
+    /**
+     * Imprime el tablero de dimensión seleccionada
+     * por el usuario.
+     * @param array Array generado con las dimensiones solicitadas por teclado desde el menú.
+     */
     public static void imprimirTableroVacio(String [][] array) {
         System.out.print(" ");
         for(int i=0;i< array.length;i++){
@@ -16,16 +25,44 @@ public class Funciones {
             System.out.println();
         }
     }
+
+    /**
+     * Genera aleatoriamente una posición para el submarino.
+     * @param size El tamaño del lado del tablero.
+     * @return La posición del submarino en forma de array.
+     */
     public static int[] iniciarSubmarino(int size){
         int x = (int)(Math.random()*size);
         int y = (int)(Math.random()*size);
         int []submarino = new int []{x,y};
         return submarino;
     }
+
+    /**
+     * Recoge la posición indicada por el usuario.
+     * @param x Número de la fila.
+     * @param y Número de la columna.
+     * @return El punto escogido por el usuario en forma de array.
+     */
     public static int[] posicionCalibrar(int x, int y){
         int [] pos = new int []{x, y};
         return pos;
     }
+
+    /**
+     * Interpreta el resultado relativo entre la posición del submarino y
+     * la posición dada por el usuario.
+     * @param array El tablero de juego para poder imprimirlo con la función
+     *              imprimirTablero.
+     * @param size El tamaño del lado del tablero, para llamar a iniciarSubmarino.
+     * @param x Número de la fila seleccionada por el usuario para llamar al
+     *          método posicionCalibrar.
+     * @param y Número de la columna seleccionada por el usuario para llamar al
+     *          método posicionCalibrar.
+     * @return Booleano que identifica si termina el usuario gana la partida o
+     *         debe seguir intentándolo.
+     *
+     */
     public static boolean leerSonar(String [][]array,int size, int x, int y){
         int[] sub = iniciarSubmarino(size);
         int[] pos = posicionCalibrar(x, y);
@@ -54,6 +91,15 @@ public class Funciones {
         System.out.println("Tu posición fue "+Arrays.toString(pos));
         return false;
     }
+
+    /**
+     * Imprime el tablero con el resultado gráfico del turno.
+     * @param array El tablero de juego para poder acceder a él.
+     * @param sub Array que contiene la posición del submarino, generada por
+     *            iniciarSubmarino.
+     * @param pos Array que contiene la posición escogida por el usuario, generada por
+     *            posicionCalibrar.
+     */
     public static void imprimirTablero(String [][] array, int []sub, int []pos){
         System.out.print(" ");
         for(int i=0;i< array.length;i++){
@@ -86,6 +132,11 @@ public class Funciones {
             System.out.println();
         }
     }
+
+    /**
+     * Imprime por pantalla el funcionamiento del juego, instrucciones y algunas
+     * indicaciones.
+     */
     public static void ayuda(){
         System.out.println("EXPLICACIÓN");
         System.out.println("--------------");

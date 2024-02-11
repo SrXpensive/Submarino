@@ -6,8 +6,8 @@ public class Leer {
     private final static BufferedReader entradaConsola =
             new java.io.BufferedReader(new java.io.InputStreamReader(System.in));
 
-    /*
-    *Lee un texto del teclado.
+    /**
+    * Lee un texto del teclado.
     * @param mensaje Texto que se pasa al usuario
     * @return el texto introducido. Blanco en caso de error
      */
@@ -25,7 +25,7 @@ public class Leer {
         return respuesta;
     }
 
-    /*
+    /**
     * Introducción de números enteros
     * @param mensaje Mensaje que se da al usuario
     * @return un entero con el valor
@@ -44,7 +44,7 @@ public class Leer {
         }
         return n;
     }
-    /*
+    /**
     * Introducción de números decimales
     * @param mensaje Mensaje que se da al usuario
     * @return un decimal con el valor
