@@ -42,6 +42,10 @@ public class Main {
                             break;
                         }
                     }
+                    break;
+                case 2:
+                    Funciones.ayuda();
+                    break;
             }
         }while(opcion !=0);
     }
