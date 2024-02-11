@@ -1,11 +1,14 @@
 /**
  * Ejercicio Submarino
- * Menú desde el que se llama al resto de métodos
  * @author Eduardo Caro
  * @version 1.0
  *
  */
 public class Main {
+    /**
+     * Menú desde el que se llama a las funciones
+     * @param args Opciones pedidas al usuario por pantalla
+     */
     public static void main(String[] args) {
         String [][] tablero;
         int dimension;

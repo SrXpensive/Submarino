@@ -1,7 +1,9 @@
-
-
 import java.io.BufferedReader;
 import java.io.IOException;
+
+/**
+ * Clase para agilizar la petición de datos por pantalla
+ */
 public class Leer {
     private final static BufferedReader entradaConsola =
             new java.io.BufferedReader(new java.io.InputStreamReader(System.in));
