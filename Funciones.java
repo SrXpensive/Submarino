@@ -40,11 +40,13 @@ public class Funciones {
 
     /**
      * Recoge la posición indicada por el usuario.
-     * @param x Número de la fila.
-     * @param y Número de la columna.
      * @return El punto escogido por el usuario en forma de array.
      */
-    public static int[] posicionCalibrar(int x, int y){
+    public static int[] posicionCalibrar(){
+        int x = Leer.leerEntero("Introduce la coordenada X (fila): ");
+        System.out.println("--------------");
+        int y = Leer.leerEntero("Introduce la coordenada Y (columna): ");
+        System.out.println("--------------");
         int [] pos = new int []{x, y};
         return pos;
     }
@@ -55,17 +57,13 @@ public class Funciones {
      * @param array El tablero de juego para poder imprimirlo con la función
      *              imprimirTablero.
      * @param size El tamaño del lado del tablero, para llamar a iniciarSubmarino.
-     * @param x Número de la fila seleccionada por el usuario para llamar al
-     *          método posicionCalibrar.
-     * @param y Número de la columna seleccionada por el usuario para llamar al
-     *          método posicionCalibrar.
+     * @param pos Posición indicada por el usuario en forma de Array.
      * @return Booleano que identifica si termina el usuario gana la partida o
      *         debe seguir intentándolo.
-     *
      */
-    public static boolean leerSonar(String [][]array,int size, int x, int y){
+    public static boolean leerSonar(String [][]array,int size, int[]pos){
         int[] sub = iniciarSubmarino(size);
-        int[] pos = posicionCalibrar(x, y);
+
         if(Arrays.equals(sub,pos)){
             imprimirTablero(array,sub,pos);
             System.out.println("¡HAS DADO EN EL CLAVO!");
@@ -171,6 +169,30 @@ public class Funciones {
         System.out.println("--------------");
         System.out.println("- ¡Espero que lo pases muy bien jugando!");
         System.out.println("--------------");
+    }
+
+    /**
+     * Método para iniciar la partida
+     * Realiza las llamadas necesarias al resto de métodos
+     */
+    public static void jugar(){
+        int size = Leer.leerEntero("¿Cuánto quieres que mida el lado del mar?: ");
+        System.out.println("--------------");
+        String[][] sea = new String[size][size];
+        System.out.println("Tu tablero será este:");
+        Funciones.imprimirTableroVacio(sea);
+        System.out.println("--------------");
+        int tries = Leer.leerEntero("¿Cuantos intentos quieres?: ");
+        System.out.println("--------------");
+        for(int i = 1; i<= tries; i++){
+            System.out.println("Intento "+i+" de "+ tries);
+            System.out.println("--------------");
+            if(Funciones.leerSonar(sea, size,Funciones.posicionCalibrar())){
+                System.out.println("GANASTE LA PARTIDA");
+                System.out.println("--------------");
+                break;
+            }
+        }
     }
 }
 
